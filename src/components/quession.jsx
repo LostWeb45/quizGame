@@ -3,8 +3,7 @@ const Quession = ({ text, setQuesnumber, setTeruansw }) => {
   const [answer, setAnswer] = useState(null);
   const cuonter = () => {
     if (answer === null) {
-      // alert("Выберите ответ!");
-      return;
+      return null;
     }
 
     const isCorrect = text["answer"].some(
@@ -14,14 +13,14 @@ const Quession = ({ text, setQuesnumber, setTeruansw }) => {
     if (isCorrect) {
       setTeruansw((prev) => prev + 1);
     }
-
+    setAnswer(null);
     setQuesnumber((prev) => prev + 1);
   };
   return (
     <div>
       <p>Вопрос: {text["quission"]}</p>
       {text["answer"].map((ans, id) => (
-        <label htmlFor={id}>
+        <label htmlFor={id} key={ans}>
           <div key={id} className="quession">
             <input
               type="radio"
