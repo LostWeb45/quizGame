@@ -1,5 +1,6 @@
 {
   "name": "quiz",
+  "homepage": "https://LostWeb45/github.io/quizGame",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
