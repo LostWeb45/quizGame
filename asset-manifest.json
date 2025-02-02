@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/github.io/quizGame/static/css/main.16076827.css",
+    "main.js": "/github.io/quizGame/static/js/main.d6214e4c.js",
+    "index.html": "/github.io/quizGame/index.html",
+    "main.16076827.css.map": "/github.io/quizGame/static/css/main.16076827.css.map",
+    "main.d6214e4c.js.map": "/github.io/quizGame/static/js/main.d6214e4c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16076827.css",
+    "static/js/main.d6214e4c.js"
+  ]
+}
