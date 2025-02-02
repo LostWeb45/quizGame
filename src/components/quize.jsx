@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-
 import Quesslist from "./quesslist";
+
 const Quize = () => {
-  const [category, setCategory] = useState("Меню");
-  const reset = () => {
-    setCategory("Меню");
-  };
+  const [category, setCategory] = useState("menu");
 
   return (
     <div className="mainboard">
-      {category == "Меню" ? (
+      {category == "menu" ? (
         <>
-          <button onClick={() => setCategory("sport")}>Спорт</button>
-          <button onClick={() => setCategory("История")}>История</button>
-          <button onClick={() => setCategory("Наука")}>Наука</button>
+          <h2>Выберите тему для вопросов</h2>
+
+          <div className="btnmenu">
+            <button onClick={() => setCategory("sport")}>Спорт</button>
+            <button onClick={() => setCategory("history")}>История</button>
+            <button onClick={() => setCategory("science")}>Наука</button>
+          </div>
         </>
       ) : (
-        <Quesslist theme={category} reset={reset} />
+        <Quesslist theme={category} setCategory={setCategory} />
       )}
     </div>
   );

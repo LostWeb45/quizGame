@@ -1,24 +1,37 @@
 import React, { useState } from "react";
-const Quession = ({ text, setQuesnumber, reset }) => {
+const Quession = ({ text, setQuesnumber, setTeruansw }) => {
   const [answer, setAnswer] = useState(null);
   const cuonter = () => {
-    // console.log(text["answer"].lenght, answer);
+    if (answer === null) {
+      // alert("Выберите ответ!");
+      return;
+    }
 
-    if (answer != null) setQuesnumber((prev) => prev + 1);
+    const isCorrect = text["answer"].some(
+      (ans) => ans[1] === 1 && ans[0] === answer
+    );
+
+    if (isCorrect) {
+      setTeruansw((prev) => prev + 1);
+    }
+
+    setQuesnumber((prev) => prev + 1);
   };
   return (
     <div>
       <p>Вопрос: {text["quission"]}</p>
       {text["answer"].map((ans, id) => (
-        <div key={id}>
-          <input
-            type="radio"
-            name="ques"
-            id={id}
-            onClick={() => setAnswer(ans[1])}
-          />
-          <label htmlFor={id}>{ans[0]}</label>
-        </div>
+        <label htmlFor={id}>
+          <div key={id} className="quession">
+            <input
+              type="radio"
+              name="ques"
+              id={id}
+              onChange={() => setAnswer(ans[0])}
+            />
+            <span>{ans[0]}</span>
+          </div>
+        </label>
       ))}
 
       <button onClick={cuonter}>Ответить</button>
